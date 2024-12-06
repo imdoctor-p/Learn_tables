@@ -8,7 +8,6 @@
     <style>
 body {
 	background-color: #E6E6FA;
-	//background-image: linear-gradient(to right, red , blue);
     }
 </style>
     </head>
