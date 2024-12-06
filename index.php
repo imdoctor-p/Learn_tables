@@ -32,7 +32,7 @@ body {
                     echo "$n x $z = $result<br>";
                 }
             } else {
-                echo "Please enter a valid positive number";
+                echo "Please enter a valid positive number.";
             }
         }
         ?>
