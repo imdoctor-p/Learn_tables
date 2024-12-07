@@ -9,34 +9,54 @@
 body {
 	background-color: #E6E6FA;
     }
-</style>
-    </head>
+
+table {
+    margin: 15px;
+}
+
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 5px 30px 5px 30px;
+}
+    </style>
 </head>
 <body>
 <div class="ex1">
     <div class="ex2">
-        <form method="POST">
-        <h2>Learn Any Table</h2>
-        <input type="text" name="data" placeholder="type any Number">
-        <input type="submit" value="TABLE">
-        <br><br>
-        <?php
-        if (isset($_POST["data"])) {
-            $n = $_POST["data"];
-            
-            // Validate if the input is a number
-            if (is_numeric($n) && $n > 0) {
-                $n = intval($n);
-                for ($z = 1; $z <= 10; $z++) {
-                    $result = $n * $z;
-                    echo "$n x $z = $result<br>";
-                }
-            } else {
-                echo "Please enter a valid positive number.";
+    <table border="1">
+    <tr>
+        <th><h2>Learn Any Table</h2></th>
+    </tr>
+</table>
+
+<form method="POST">
+    <input type="text" name="data" placeholder="Type any number" required>
+    <input type="submit" value="TABLE">
+    <br><br>
+</form>
+
+<table border="1">
+    <?php
+    if (isset($_POST["data"])) {
+        $n = $_POST["data"];
+        
+        // Validate if the input is a number
+        if (is_numeric($n) && $n > 0) {
+            $n = intval($n);
+            for ($z = 1; $z <= 10; $z++) {
+                $result = $n * $z;
+                echo "<tr>";
+                echo "<td>$n x $z <b>=</b> $result</td>";
+                echo "</tr>";
             }
+        } else {
+            echo "<tr><td colspan='2'>Please enter a valid positive number.</td></tr>";
         }
-        ?>
-        </form>
+    }
+    ?>
+</table>
+
     </div>
 </body>
 </html>
